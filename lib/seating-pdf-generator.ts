@@ -24,7 +24,7 @@ export function generateSeatingPDF(
   doc.setTextColor(30, 30, 30);
   doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
-  doc.text("Pogo", margin, 16);
+  doc.text("Pogoo", margin, 16);
 
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
