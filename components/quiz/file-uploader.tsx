@@ -39,10 +39,11 @@ export function FileUploader({ files, onFilesChange }: FileUploaderProps) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      "application/pdf": [".pdf"],
       "text/plain": [".txt"],
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [".docx"],
-      "image/*": [".png", ".jpg", ".jpeg"],
+      "text/markdown": [".md"],
+      "text/csv": [".csv"],
+      "application/json": [".json"],
+      "text/html": [".html"],
     },
     maxFiles: MAX_FILES - files.length,
     disabled: files.length >= MAX_FILES,
@@ -76,7 +77,7 @@ export function FileUploader({ files, onFilesChange }: FileUploaderProps) {
           Drag and drop files here, or click to browse
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
-          Supports PDF, DOCX, TXT, and images (up to {MAX_FILES} files)
+          Supports TXT, MD, CSV, JSON, and HTML files (up to {MAX_FILES} files)
         </p>
       </div>
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { DecorativeShapes } from "@/components/decorative-shapes";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { FileQuestion, LayoutGrid, Sparkles, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
@@ -17,7 +18,7 @@ export default function HomePage() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
             <span className="text-lg font-bold text-primary-foreground">P</span>
           </div>
-          <span className="text-xl font-bold text-foreground">Pogo</span>
+          <span className="text-xl font-bold text-foreground">Pogoo</span>
         </div>
         <nav className="flex items-center gap-4">
           <Link href="/quiz" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -26,6 +27,7 @@ export default function HomePage() {
           <Link href="/seating" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Seating Chart
           </Link>
+          <ThemeToggle />
         </nav>
       </header>
 
@@ -49,7 +51,7 @@ export default function HomePage() {
             className="max-w-4xl text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
           >
             The complete toolkit for{" "}
-            <span className="text-primary">modern teachers</span>
+            <span className="text-primary text-justify">modern teachers</span>
           </motion.h1>
           
           <motion.p
@@ -175,7 +177,7 @@ export default function HomePage() {
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
                 <span className="text-sm font-bold text-primary-foreground">P</span>
               </div>
-              <span className="text-sm font-semibold text-foreground">Pogo</span>
+              <span className="text-sm font-semibold text-foreground">Pogoo</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Built for teachers, by developers who care about education.

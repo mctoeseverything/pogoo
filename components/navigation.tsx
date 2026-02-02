@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { FileQuestion, LayoutGrid } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -20,7 +21,7 @@ export function Navigation() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
             <span className="text-lg font-bold text-primary-foreground">P</span>
           </div>
-          <span className="text-xl font-bold text-foreground">Pogo</span>
+          <span className="text-xl font-bold text-foreground">Pogoo</span>
         </Link>
         <nav className="flex items-center gap-1">
           {links.map((link) => {
@@ -42,6 +43,7 @@ export function Navigation() {
               </Link>
             );
           })}
+          <ThemeToggle />
         </nav>
       </div>
     </header>

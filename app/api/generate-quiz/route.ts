@@ -1,23 +1,10 @@
 import { type NextRequest } from "next/server";
-import pdf from "pdf-parse";
 
 interface FileData {
   name: string;
   type: string;
   content: string | null;
   textContent: string | null;
-}
-
-// Extract text from PDF buffer
-async function extractPdfText(base64Content: string): Promise<string> {
-  try {
-    const buffer = Buffer.from(base64Content, "base64");
-    const data = await pdf(buffer);
-    return data.text || "";
-  } catch (error) {
-    console.error("PDF parsing error:", error);
-    return "";
-  }
 }
 
 interface QuizConfig {
@@ -331,23 +318,19 @@ export async function POST(req: NextRequest) {
       if (file.textContent) {
         combinedText += file.textContent + "\n\n";
       } else if (file.content) {
-        // Handle different file types
-        if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-          // Extract text from PDF
-          const pdfText = await extractPdfText(file.content);
-          if (pdfText) {
-            combinedText += pdfText + "\n\n";
-          }
-        } else if (file.type.startsWith("text/") || 
-                   file.name.match(/\.(txt|md|csv|json|xml|html)$/i)) {
+        // Handle text-based file types
+        if (file.type.startsWith("text/") || 
+            file.name.match(/\.(txt|md|csv|json|xml|html)$/i)) {
           // Decode base64 text content
           try {
-            const decoded = Buffer.from(file.content, "base64").toString("utf-8");
+            const decoded = atob(file.content);
             combinedText += decoded + "\n\n";
           } catch {
             // Skip if decoding fails
           }
         }
+        // Note: PDF support requires text files for now
+        // Upload .txt or .md files for best results
       }
     }
 
