@@ -18,7 +18,7 @@ export default function HomePage() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
             <span className="text-lg font-bold text-primary-foreground">P</span>
           </div>
-          <span className="text-xl font-bold text-foreground">Pogoo</span>
+          <span className="text-xl font-bold text-foreground">Pogo</span>
         </div>
         <nav className="flex items-center gap-4">
           <Link href="/quiz" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -177,7 +177,7 @@ export default function HomePage() {
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
                 <span className="text-sm font-bold text-primary-foreground">P</span>
               </div>
-              <span className="text-sm font-semibold text-foreground">Pogoo</span>
+              <span className="text-sm font-semibold text-foreground">Pogo</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Built for teachers, by developers who care about education.

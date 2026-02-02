@@ -21,7 +21,7 @@ export function Navigation() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
             <span className="text-lg font-bold text-primary-foreground">P</span>
           </div>
-          <span className="text-xl font-bold text-foreground">Pogoo</span>
+          <span className="text-xl font-bold text-foreground">Pogo</span>
         </Link>
         <nav className="flex items-center gap-1">
           {links.map((link) => {
