@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { FileQuestion, LayoutGrid } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -42,6 +43,7 @@ export function Navigation() {
               </Link>
             );
           })}
+          <ThemeToggle />
         </nav>
       </div>
     </header>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { DecorativeShapes } from "@/components/decorative-shapes";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { FileQuestion, LayoutGrid, Sparkles, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
@@ -26,6 +27,7 @@ export default function HomePage() {
           <Link href="/seating" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Seating Chart
           </Link>
+          <ThemeToggle />
         </nav>
       </header>
 
